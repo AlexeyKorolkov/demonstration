@@ -27,7 +27,7 @@ phones = [
 ]
 
 
-@app.route('/main', methods=['GET'])
+@app.route('/', methods=['GET'])
 @cross_origin()
 def index():
     return jsonify(phones)
