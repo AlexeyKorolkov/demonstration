@@ -1,6 +1,8 @@
 from flask import Flask, jsonify
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+CORS(app)
 
 
 phones = [
@@ -26,6 +28,7 @@ phones = [
 
 
 @app.route('/main', methods=['GET'])
+@cross_origin()
 def index():
     return jsonify(phones)
 
